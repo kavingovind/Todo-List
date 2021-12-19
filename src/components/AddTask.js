@@ -26,6 +26,7 @@ const AddTask = (props) => {
       console.log(response);
       if (response.data.status === "success") {
         setSnackBar(true);
+        setTaskName("");
         props.handleAddTask();
         props.reload();
       } else {

@@ -83,15 +83,11 @@ const TaskList = () => {
               const labelId = task._id;
               return (
                 <ListItem key={task._id} disablePadding>
-                  <ListItemButton
-                    role={undefined}
-                    onClick={() => onTaskComplete(task)}
-                    dense
-                  >
+                  <ListItemButton role={undefined} dense>
                     <ListItemIcon>
                       <Checkbox
                         edge="end"
-                        checked={task.status === "Active"}
+                        checked={task.status !== "Active"}
                         tabIndex={-1}
                         disableRipple
                         inputProps={{ "aria-labelledby": labelId }}
