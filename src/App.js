@@ -7,8 +7,9 @@ import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
-import TaskLists from "./components/TaskLists";
 import { styled } from "@mui/material/styles";
+import TaskLists from "./components/TaskLists";
+import CompletedTasks from "./components/CompletedTasks";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -64,8 +65,8 @@ const App = () => {
                 indicatorColor="secondary"
                 centered
               >
-                <Tab id="todo" label="Tasks List" aria-label="todo" />
-                <Tab id="done" label="Completed" aria-label="done" />
+                <Tab id="todo" label="To-Do" aria-label="todo" />
+                <Tab id="done" label="Done" aria-label="done" />
               </Tabs>
             </Box>
 
@@ -73,7 +74,7 @@ const App = () => {
               <TaskLists />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Work In Progess
+              <CompletedTasks />
             </TabPanel>
           </Box>
         </Paper>
